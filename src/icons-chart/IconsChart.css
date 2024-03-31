@@ -1,0 +1,81 @@
+.row-class {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.earnings-icon,.orders-icon,.balance-icon,.sales-icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-right: 1%;
+    border-radius: 2%;
+}
+.earnings,.orders,.balance,.sales {
+    max-width: 40%;
+    min-width: 40%;
+}
+.earnings-master,.orders-master,.balance-master,.sales-master {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-left: 5%;
+    align-items: center;
+}
+.earnings-child,.orders-child,.balance-child,.sales-child {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    justify-content: flex-start;
+    padding-left: 5%;
+    border-radius: 5%;
+    align-items: center;
+}
+.earnings-value,.orders-value,.balance-value,.sales-value {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.earning-summary,.orders-summary,.balance-summary,.sales-summary {
+    display: flex;
+    flex-direction: column;
+}
+.earning-label,.orders-label,.balance-label,.sales-label {
+    display: flex;
+    flex-direction: row;
+    opacity: 0.3;
+    font-weight: 500;
+}
+.earning-profit,.orders-trans,.balance-trans,.sales-trans {
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+}
+.earning-summary-text,.orders-summary-text,.balance-summary-text,.sales-summary-text {
+    display: flex;
+    flex-direction: row;
+}
+.earning-summary-text > small > .earning-percentage,
+.sales-summary-text > small > .sales-percentage {
+    color: #009824;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.orders-summary-text > small > .orders-percentage,
+.balance-summary-text > small > .balance-percentage {
+    color: #CD0041;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.earning-summary-text > small,
+.orders-summary-text > small,
+.balance-summary-text > small,
+.sales-summary-text > small {
+    display: flex;
+}

@@ -1,23 +1,35 @@
-import logo from './logo.svg';
+import React from 'react';
+import ColumnChart from './column-chart/ColumnChart';
+import IconsChart from './icons-chart/IconsChart';
+import LoggedInUser from './logged-in-user/LoggedInUser';
+import SideNav from './side-nav/SideNav';
+import DoughnutCustomerChart from './doughnut-customer-chart/DoughnutCustomerChart';
+import ProductTable from './product-table/ProductTable';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app-container'>
+      <SideNav />
+      <div className='main-content'>
+        <LoggedInUser />
+        <div className='align-content'>
+          <IconsChart />
+          <div className='empty-div'>&nbsp;</div>
+          <div className='charts-row'>
+            <div className='column-chart'>
+              <ColumnChart />
+            </div>
+            <div className='doughnut-chart'>
+              <DoughnutCustomerChart />
+            </div>
+          </div>
+        </div>
+        <div className='empty-div'>&nbsp;</div>
+        <div className='product-table'>
+          <ProductTable />
+        </div>
+      </div>
     </div>
   );
 }
