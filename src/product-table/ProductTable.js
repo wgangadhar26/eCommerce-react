@@ -1,12 +1,38 @@
 import abstract from '../images/abstract-icon.png';
 import sarphens from '../images/sarphens-illustration.png';
 import './ProductTable.css';
-import Select from 'react-select'
+import Select from 'react-select';
+import productsData from './ProductTableData';
 
 const ProductTable = () => {
     const options = [
         { value: 'last30Days', label: 'Last 30 Days' },
     ]
+    const products = productsData.map((product) => (
+        <tr key={product.productId} className="bg-white dark:bg-gray-800">
+            <th scope="row" className="flex px-12 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                <img className="abstract" src={abstract} alt="earnings"></img>
+                <div className="px-1">
+                    <div className='font-bold'>
+                        {product.productName}
+                    </div>
+                    <div className='small-text'>
+                        <small>{product.productAdditionalInfo}</small>
+                    </div>
+                </div>
+            </th>
+            <td className="px-4 py-4">
+                {product.stock}
+            </td>
+            <td className="px-4 py-4">
+                {product.price}
+            </td>
+            <td className="px-4 py-4">
+                {product.sales}
+            </td>
+        </tr>
+
+    ))
     return (
         <div className="relative overflow-x-auto border-2 rounded-xl">
             <div className='first-row'>
@@ -40,50 +66,9 @@ const ProductTable = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr className="bg-white dark:bg-gray-800">
-                        <th scope="row" className="flex px-12 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            <img className="abstract" src={abstract} alt="earnings"></img>
-                            <div className="px-1">
-                                <div className='font-bold'>
-                                    Abstract 3D
-                                </div>
-                                <div className='small-text'>
-                                    <small>Loren Ipsun Dalor Sit Amlet</small>
-                                </div>
-                            </div>
-                        </th>
-                        <td className="px-4 py-4">
-                            32 in stock
-                        </td>
-                        <td className="px-4 py-4">
-                            $ 45.99
-                        </td>
-                        <td className="px-4 py-4">
-                            20
-                        </td>
-                    </tr>
-                    <tr className="bg-white dark:bg-gray-800">
-                        <th scope="row" className="flex px-12 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            <img className="sarphens" src={sarphens} alt="sarphens"></img>
-                            <div className="px-1">
-                                <div className="font-bold">
-                                    Sarphens Illustration
-                                </div>
-                                <div className='small-text'>
-                                    <small>Loren Ipsun Dalor Sit Amlet</small>
-                                </div>
-                            </div>
-                        </th>
-                        <td className="px-4 py-4">
-                            32 in stock
-                        </td>
-                        <td className="px-4 py-4">
-                            $ 45.99
-                        </td>
-                        <td className="px-4 py-4">
-                            20
-                        </td>
-                    </tr>
+                    {
+                        products
+                    }
                 </tbody>
             </table>
         </div>
